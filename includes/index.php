@@ -1,8 +1,8 @@
 <?php
     require('functions.php');
 
-    if (isset($_GET['user'])) {
-        $user = getUser($pdo);
+    if(isset($_GET["getMovies"])) {
+        $movies = getMovies($pdo);
+    
+        echo json_encode($movies);
     }
-
-    echo json_encode($user);
