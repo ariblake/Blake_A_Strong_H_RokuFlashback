@@ -1,5 +1,6 @@
 // Imports
 import ContentMenuComponent from "./components/ContentMenuComponent.js";
+import PlayerComponent from "./components/PlayerComponent.js";
 
 (() => {
     
@@ -7,6 +8,7 @@ import ContentMenuComponent from "./components/ContentMenuComponent.js";
         // Routes
         routes: [
             { path: '/', name: "dashboard", component: ContentMenuComponent },
+            { path: '/player', name: "player", component: PlayerComponent },
         ]
     });
 
