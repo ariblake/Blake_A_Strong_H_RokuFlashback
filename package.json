@@ -1,0 +1,13 @@
+{
+  "name": "blake_a_strong_h_rokuflashback",
+  "version": "1.0.0",
+  "description": "This is an assignment for MMED 5006. We have to build a mobile-first responsive app that allows users to access movies, television, and music from the 1950s-1990s. Flashback allows for two separate categories: Parents and Kids, which filters content according to the type of profile. Users are able to rate and comment on content, as well as like and share on social media. The content will be retrieved from a database via AJAX.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ariana",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
