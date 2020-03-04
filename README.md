@@ -15,8 +15,8 @@ This is an assignment for MMED 5006. We have to build a mobile-first responsive 
 
 ## Goals
 
-- [ ] Create and link a database containing content
-- [ ] Use Vue components and router
-- [ ] Display data from database via AJAX
+- [x] Create and link a database containing content
+- [x] Use Vue components and router
+- [x] Display data from database via AJAX
 - [ ] Include social media APIs to like, share and comment/rate content
-- [ ] Use SASS for styling
+- [x] Use SASS for styling
