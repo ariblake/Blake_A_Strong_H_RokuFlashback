@@ -2,51 +2,54 @@ import MovieComponent from "./MovieComponent.js";
 
 export default {
     template: `
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                <h1>
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Movies
-                    </button>
-                </h1>
+    <section class="conainer-fluid" id="homeSection">
+        <h1>Hello! Choose a category and decade</h1>
+        <div class="accordion " id="accordionExample">
+            <div class="card bg-primary border-dark">
+                <div class="card-header" id="accordionHeading">
+                <h4 class="card-title">Your all-in-one streaming platform for the decades.</h4>
+                <p>Ready to flashback?</p>
+                </div>
+            </div>
+            <div class="card border-dark">
+                <div class="card-header btn btn-link" id="headingOne" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <img src="images/movies.svg">
+                    <h2 class="card-title">Movies</h2>
+                    <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku</p>
                 </div>
 
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="card-body row">
-                    <MovieComponent v-for="movie in movieList" :livemovie="movie"></MovieComponent>
-                </div>
+                    <div class="card-body row">
+                        <MovieComponent v-for="movie in movieList" :livemovie="movie"></MovieComponent>
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    TV
-                    </button>
-                </h2>
+            <div class="card border-dark">
+                <div class="card-header btn btn-link collapsed" id="headingTwo" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <img src="images/tv.svg">
+                    <h2 class="card-title">TV</h2>
+                    <p>Want something quick to watch? Find a TV show from one of these categories!</p>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="card-body row">
-                    
-                </div>
+                    <div class="card-body row">
+                        
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Music
-                    </button>
-                </h2>
+            <div class="card border-dark">
+                <div class="card-header btn btn-link collapsed" id="headingThree" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <img src="images/music.svg">
+                    <h2 class="card-title">Music</h2>
+                    <p>You can find the best tunes on Flashback by Roku. Browse and listen!</p>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="card-body row">
-                    
-                </div>
+                    <div class="card-body row">
+                        
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
     `,
 
     data: function() {

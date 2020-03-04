@@ -1,0 +1,62 @@
+#homeSection {
+    padding: 3%;
+}
+
+.accordion {
+    background-color: $main-darkgrey;
+}
+
+#accordionHeading {
+    background-color: $main-darkgrey;
+    border: none;
+    padding: 1%;
+    h4 {
+        color: $main-teal;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+.card-header {
+    color: white;
+    text-align: left;
+    img {
+        width: 4%;
+        float: left;
+        background-color: white;
+        border-radius: 35px;
+        padding: 5px;
+        margin: 10px 40px 5px 10px;
+        
+    }
+    .btn-link {
+        font-size: 1em;
+        text-transform: uppercase;
+        color: white;
+        margin-left: 0px;
+    }
+}
+
+#headingOne {
+    background-color: $main-teal;
+}
+
+#headingTwo {
+    background-color: $main-orange;
+}
+
+#headingThree {
+    background-color: $main-red;
+}
+
+.card-body {
+    background-color: $main-lightgrey;
+}
+
+#movieInfo {
+    img {
+        width: 90%;
+    }
+}

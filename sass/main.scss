@@ -1,2 +1,55 @@
 @import '_vars';
+@import 'modules/_nav';
+@import 'modules/_login';
+@import 'modules/_users';
+@import 'modules/_movieSelect';
 @import 'modules/_movieInfo';
+@import 'modules/_footer';
+
+body {
+    background-color: $main-navy;
+    font-family: $body-font;
+    color: white;
+}
+
+h1 {
+    color: white;
+    font-family: $header-font;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: white;
+    font-family: $header-font;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: white;
+    font-family: $header-font;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+h4 {
+    color: white;
+    font-family: $header-font;
+    margin-bottom: 30px;
+}
+
+h5 {
+    color: white;
+    font-family: $body-font;
+    margin-bottom: 30px;
+}
+
+.btn-outline-primary {
+    font-family: $header-font;
+    color: white;
+    border: 4px solid;
+    border-radius: 100px;
+    padding: 8px 30px;
+    transition: .5s;
+}
