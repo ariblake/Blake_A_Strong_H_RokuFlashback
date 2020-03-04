@@ -1,4 +1,6 @@
-import MovieComponent from "./MovieComponent.js";
+import MovieComponent from "./layout/MovieComponent.js";
+import TvComponent from "./layout/TvComponent.js";
+import MusicComponent from "./layout/MusicComponent.js";
 
 export default {
     template: `
@@ -32,7 +34,7 @@ export default {
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body row">
-                        
+                        <TvComponent v-for="tv in tvList" :livetv="tv"></TvComponent>
                     </div>
                 </div>
             </div>
@@ -44,7 +46,7 @@ export default {
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body row">
-                        
+                        <MusicComponent v-for="music in musicList" :livemusic="music"></MusicComponent>
                     </div>
                 </div>
             </div>
@@ -54,13 +56,17 @@ export default {
 
     data: function() {
         return {
-            movieList: []
+            movieList: [],
+            tvList: [],
+            musicList: []
         }
     },
 
     created: function() {
         // this will fire when the component gets built
         this.fetchAllMovies();
+        this.fetchAllTv();
+        this.fetchAllMusic();
     },
 
     methods: {
@@ -71,10 +77,30 @@ export default {
             .then(res => res.json())
             .then(data => (this.movieList = data))
             .catch((err) => {console.error(err)})
+        },
+
+        fetchAllTv() {
+            let url = `./includes/index.php?getTv=true`;
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => (this.tvList = data))
+            .catch((err) => {console.error(err)})
+        },
+
+        fetchAllMusic() {
+            let url = `./includes/index.php?getMusic=true`;
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => (this.musicList = data))
+            .catch((err) => {console.error(err)})
         }
     },
 
     components: {
-        MovieComponent: MovieComponent
+        MovieComponent: MovieComponent,
+        TvComponent: TvComponent,
+        MusicComponent: MusicComponent
     }
 }
