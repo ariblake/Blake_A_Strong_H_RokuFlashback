@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/modules/_movieInfo.scss"],"names":[],"mappings":"AACI,eACI","file":"main.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/modules/_nav.scss","../sass/modules/_movieInfo.scss"],"names":[],"mappings":"AAAA,YACI,qCCCI","file":"main.css"}
