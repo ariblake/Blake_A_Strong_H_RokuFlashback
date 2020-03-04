@@ -20,3 +20,9 @@ This is an assignment for MMED 5006. We have to build a mobile-first responsive 
 - [x] Display data from database via AJAX
 - [ ] Include social media APIs to like, share and comment/rate content
 - [x] Use SASS for styling
+
+## Acknowledgements
+* Fonts (https://fonts.google.com/ and https://fonts.adobe.com)
+* Images (https://images.google.com/)
+* Video and Audio footage (https://youtube.com)
+* Media descriptions (https://www.imdb.com)
