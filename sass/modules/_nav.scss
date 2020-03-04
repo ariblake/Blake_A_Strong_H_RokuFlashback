@@ -1,3 +1,18 @@
 #mainHeader {
-    background-color: grey;
+    text-align: center;
+    width: 100%;
+
+    .navbar-nav {
+        flex-direction: row;
+        list-style-type: none;
+        max-width: 200px;
+        
+        li {
+            img {
+                width: 40%;
+                cursor: pointer;
+            }
+		}
+        
+    }
 }

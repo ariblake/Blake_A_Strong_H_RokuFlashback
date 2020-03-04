@@ -1,26 +1,21 @@
 export default {
     template: `
-        <div class="container">
-            <div class="jumbotron roku-jumbotron">
-                <h1 class="display-4">Welcome to Flashback!</h1>
-                <p class="lead">Before revisiting your favourite movies, tv shows or music from yesteryear, please log in with a valid username and password.</p>
-                <hr class="my-4">
-                <form @submit.prevent="login">
-                    <div class="form-row align-items-center">
-                        <div class="col-md-3 my-1">
-                            <label class="sr-only" for="inlineFormInputName">Name</label>
-                            <input v-model="input.username" type="text" class="form-control" id="inlineFormInputName" placeholder="username" required>
-                        </div>
-
-                        <div class="col-md-3 my-1">
-                            <label class="sr-only" for="inlineFormPassword">Name</label>
-                            <input v-model="input.password" type="password" class="form-control" id="inlineFormPassword" placeholder="password" required>
-                        </div>
-
-                        <div class="col-auto my-1">
-                            <button type="submit" class="btn btn-primary">Go!</button>
-                        </div>
+        <div class="container-fluid" id="loginSection">
+            <div class="col-12">
+                <h5>Welcome to Flashback by Roku - your all-in-one streaming platform for the decades.</h5>
+                <h1>Login</h1>
+                <form @submit.prevent="login" >
+                    <div class="form-group">
+                        <label class="sr-only" for="inlineFormInputName">Username</label>
+                        <input v-model="input.username" type="text" class="form-control-lg" id="inlineFormInputName" placeholder="username" required>
                     </div>
+
+                    <div class="form-group">
+                        <label class="sr-only" for="inlineFormPassword">Password</label>
+                        <input v-model="input.password" type="password" class="form-control-lg" id="inlineFormPassword" placeholder="password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-primary">Sign In</button>
                 </form>            
             </div>
         </div>

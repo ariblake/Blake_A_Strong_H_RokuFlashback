@@ -2,7 +2,7 @@ export default {
     props: ['liveuser'],
 
     template: `
-        <div class="col-sm-3">
+        <div class="col-sm-3 mx-auto">
             <router-link to="/home">
                 <img :src="'images/' + liveuser.avatar">
                 <h3>{{ liveuser.uname }}</h3>

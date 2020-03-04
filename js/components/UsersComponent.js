@@ -2,14 +2,16 @@ import UserComponent from "./UserComponent.js";
 
 export default {
     template: `
+        <section class="container-fluid" id="userSelect">
         <div class="row">
             <div class="col-12">
                 <h1 class="user-message">{{ message }}</h1>
-                <div class="row">
+                <div class="row" id="userCon">
                     <user v-for="user in userList" :liveuser="user"></user>
                 </div>
             </div>
         </div>
+        </section>
     `,
 
     data() {

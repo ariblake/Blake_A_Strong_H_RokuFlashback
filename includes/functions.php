@@ -31,7 +31,6 @@
         // validate that the post method is working from our JS file
 
         $username = $_POST["username"];
-
         //echo $username;
 
         $getUser = 'SELECT * FROM tbl_user where uname="'.$username.'"';
