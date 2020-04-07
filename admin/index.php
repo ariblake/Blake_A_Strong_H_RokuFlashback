@@ -1,5 +1,5 @@
 <?php
-    require('functions.php');
+    require_once '../load.php';
 
     if(isset($_GET["getMovies"])) {
         $movies = getMovies($pdo);
@@ -17,12 +17,6 @@
         $music = getMusic($pdo);
     
         echo json_encode($music);
-    }
-
-    if(isset($_GET["getUsers"])) {
-        $users = getUsers($pdo);
-    
-        echo json_encode($users);
     }
 
     if (isset($_GET['user'])) {
