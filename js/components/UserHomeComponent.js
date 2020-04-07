@@ -23,12 +23,14 @@ export default {
                 </div>
                 <div class="decadeSelectOptions">
                     <div class="row">
-                        <div v-for="item in movieDecades">
-                            <img :src="'images/' + item.image" alt="item.alt">
-                            <div class="overlay">
-                                <h4>{{ item.name }}</h4>
-                            </div>
-                        </div>
+                        <ul>
+                            <li v-for="item in movieDecades" @click="navToMediaSelect">
+                                <img :src="'images/' + item.image" alt="item.alt">
+                                <div class="overlay">
+                                    <h4>{{ item.name }}</h4>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -41,12 +43,14 @@ export default {
                 </div>
                 <div class="decadeSelectOptions">
                     <div class="row">
-                        <div v-for="item in tvDecades">
+                    <ul>
+                        <li v-for="item in tvDecades" @click="navToMediaSelect">
                             <img :src="'images/' + item.image" alt="item.alt">
                             <div class="overlay">
                                 <h4>{{ item.name }}</h4>
                             </div>
-                        </div>
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </div>
@@ -59,12 +63,14 @@ export default {
                 </div>
                 <div class="decadeSelectOptions">
                     <div class="row">
-                        <div v-for="item in musicDecades">
+                    <ul>
+                        <li v-for="item in musicDecades" @click="navToMediaSelect">
                             <img :src="'images/' + item.image" alt="item.alt">
                             <div class="overlay">
                                 <h4>{{ item.name }}</h4>
                             </div>
-                        </div>
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </div>
@@ -100,31 +106,8 @@ export default {
     },
 
     methods: {
-        fetchAllMovies() {
-            let url = `./admin/index.php?getMovies=true`;
-
-            fetch(url)
-            .then(res => res.json())
-            .then(data => (this.movieList = data))
-            .catch((err) => {console.error(err)})
-        },
-
-        fetchAllTv() {
-            let url = `./admin/index.php?getTv=true`;
-
-            fetch(url)
-            .then(res => res.json())
-            .then(data => (this.tvList = data))
-            .catch((err) => {console.error(err)})
-        },
-
-        fetchAllMusic() {
-            let url = `./admin/index.php?getMusic=true`;
-
-            fetch(url)
-            .then(res => res.json())
-            .then(data => (this.musicList = data))
-            .catch((err) => {console.error(err)})
+        navToMediaSelect() {
+            this.$router.push({ name: "media", params: { currentuser: this.currentuser, decade: this.currentdecade } });
         }
     },
 
