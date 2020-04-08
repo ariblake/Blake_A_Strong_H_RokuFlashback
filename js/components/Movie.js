@@ -2,7 +2,7 @@ export default {
     props: ['livemovie'],
 
     template: `
-        <div class="col-xs-6 col-lg-4" id="movieInfo">
+        <div class="col-xs-6 col-lg-4 mediaInfo">
             <div @click="navToMediaPlayer()">
                 <img :src="'images/' + livemovie.cover">
                 <h2 id="movieInfoTitle">{{ livemovie.title }}</h2>

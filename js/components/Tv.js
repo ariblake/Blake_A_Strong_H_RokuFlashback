@@ -2,10 +2,10 @@ export default {
     props: ['livetv'],
 
     template: `
-        <div class="col-xs-6 col-lg-4" id="tvInfo">
+        <div class="col-xs-6 col-lg-4 mediaInfo">
             <div @click="navToMediaPlayer()">
                 <img :src="'images/' + livetv.cover">
-                <h2 id="movieInfoTitle">{{ livetv.title }}</h2>
+                <h2 id="tvInfoTitle">{{ livetv.title }}</h2>
                 <h3>{{ livetv.year}}</h3>
                 <p>{{ livetv.description }}</p>
                 <p>{{ livetv.runtime}}</p>
