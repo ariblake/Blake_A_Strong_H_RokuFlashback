@@ -15,22 +15,49 @@ export default {
                 <h4>Your all-in-one streaming platform for the decades.</h4>
                 <p>Ready to flashback?</p>
             </div>
-            <nav id="mediaSelectNav">
-                <ul class="media-type">
-                    <li v-for="media in mediaTypes" @click="switchMedia(media.component)">
-                        <span><img :src="'images/' + media.icon" :alt="media.alt"></span>
-                        <span><h2>{{ media.name }}</h2></span>
-                    </li>
-                </ul>
-            </nav>
-            <component :is="this.activeComponent"></component>
+            <div v-if="currentuser.adult === '1'">
+                <nav id="mediaSelectAdultNav">
+                    <ul class="media-type">
+                        <li v-for="media in mediaTypes" @click="switchMedia(media.component)">
+                            <span><img :src="'images/' + media.icon" :alt="media.alt"></span>
+                            <span><h2>{{ media.name }}</h2></span>
+                        </li>
+                    </ul>
+                </nav>
+                <component :is="this.activeComponent"></component>
+            </div>
+            <div v-else>
+                <nav id="mediaSelectChildNav">
+                    <ul class="media-type">
+                        <li v-for="media in mediaTypes" @click="switchMedia(media.component)">
+                            <span><img :src="'images/' + media.icon" :alt="media.alt"></span>
+                            <span><h2>{{ media.name }}</h2></span>
+                        </li>
+                    </ul>
+                </nav>
+                <component :is="this.activeComponent"></component>
+            </div>
+            
         </div>
     </section>
     `,
 
+    // created: function() {
+    //     if (this.currentuser.adult === true || this.liveuser.adult === "1") {
+    //         adult = true;
+    //     } else {
+    //         adult = false;
+    //     }
+    // },
+
+    // data: {
+    //     adult: false,
+    // },
+
     data: function() {
         return {
             activeComponent: MovieComponent,
+
             mediaTypes: [
                 { name: "Movies", icon: "movies.svg", alt: "movie icon", component: MovieComponent },
                 { name: "TV", icon: "tv.svg", alt: "tv icon", component: TvComponent },
