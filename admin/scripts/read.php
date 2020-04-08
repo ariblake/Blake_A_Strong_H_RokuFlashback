@@ -1,37 +1,50 @@
 <?php
 
-    function getMovies() {
+    function getAll($tbl)
+    {
         $pdo = Database::getInstance()->getConnection();
-        $queryMovies = 'SELECT * FROM tbl_movies';
-        $movies = $pdo->query($queryMovies);
+        $queryAll = 'SELECT * FROM ' . $tbl;
+        $results = $pdo->query($queryAll);
 
-        if ($movies) {
+        if ($results) {
+            return $results->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'There was a problem accessing this info';
+        }
+    }
+
+    function getChildMovies(){
+        $pdo = Database::getInstance()->getConnection();
+        $filterQuery = 'SELECT * FROM tbl_movies AS t, tbl_arating AS t2, tbl_mov_arating AS t3 WHERE t.id = t3.movies_id AND t2.arating_id = t3.arating_id AND t2.arating_name = "everyone"';
+        $movies = $pdo->query($filterQuery);
+    
+        if($movies){
             return $movies->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            return 'There was a problem accessing the movies';
+        }else{
+            return 'There was a problem accessing this info';
         }
     }
 
-    function getTv() {
+    function getChildTv(){
         $pdo = Database::getInstance()->getConnection();
-        $queryTv = 'SELECT * FROM tbl_tv';
-        $tv = $pdo->query($queryTv);
+        $filterQuery = 'SELECT * FROM tbl_tv AS t, tbl_arating AS t2, tbl_tv_arating AS t3 WHERE t.id = t3.tv_id AND t2.arating_id = t3.arating_id AND t2.arating_name = "everyone"';
+        $tv = $pdo->query($filterQuery);
     
-        if ($tv) {
+        if($tv){
             return $tv->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            return 'There was a problem accessing the tv shows';
+        }else{
+            return 'There was a problem accessing this info';
         }
     }
 
-    function getMusic() {
+    function getChildMusic(){
         $pdo = Database::getInstance()->getConnection();
-        $queryMusic = 'SELECT * FROM tbl_music';
-        $music = $pdo->query($queryMusic);
+        $filterQuery = 'SELECT * FROM tbl_music AS t, tbl_arating AS t2, tbl_mus_arating AS t3 WHERE t.music_id = t3.music_id AND t2.arating_id = t3.arating_id AND t2.arating_name = "everyone"';
+        $music = $pdo->query($filterQuery);
     
-        if ($music) {
+        if($music){
             return $music->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            return 'There was a problem accessing the music';
+        }else{
+            return 'There was a problem accessing this info';
         }
     }

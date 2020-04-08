@@ -4,12 +4,12 @@ export default {
     name: "MovieComponent",
 
     template: `
-    <section>
+    <section class="mediaLibrary">
         <div class="selectionHeader">
             <h1>Movies</h1>
             <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku</p>
         </div>
-        <div class=" row">
+        <div class="row">
             <Movie v-for="movie in movieList" :livemovie="movie"></Movie>
         </div>
     </section>
@@ -28,7 +28,7 @@ export default {
 
     methods: {
         fetchAllMovies() {
-            let url = `./admin/index.php?getMovies=true`;
+            let url = `./admin/index.php?media=movies`;
 
             fetch(url)
             .then(res => res.json())

@@ -1,7 +1,7 @@
 import Music from "./Music.js";
 
 export default {
-    name: "MusicComponent",
+    name: "MusicComponentChild",
 
     template: `
     <section class="mediaLibrary">
@@ -28,7 +28,7 @@ export default {
 
     methods: {
         fetchAllMusic() {
-            let url = `./admin/index.php?media=music`;
+            let url = `./admin/index.php?getChildMusic=true`;
 
             fetch(url)
             .then(res => res.json())

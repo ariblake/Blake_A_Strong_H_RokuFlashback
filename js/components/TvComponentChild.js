@@ -1,44 +1,44 @@
-import Music from "./Music.js";
+import Tv from "./Tv.js";
 
 export default {
-    name: "MusicComponent",
+    name: "TvComponentChild",
 
     template: `
     <section class="mediaLibrary">
         <div class="selectionHeader">
-            <h1>Music</h1>
-            <p>You can find the best tunes on Flashback by Roku. Browse and listen!</p>
+            <h1>TV</h1>
+            <p>Want something quick to watch? Find a TV show from one of these categories!</p>
         </div>
         <div class="row">
-            <Music v-for="music in musicList" :livemusic="music"></Music>
+            <Tv v-for="tv in tvList" :livetv="tv"></Tv>
         </div>
     </section>
     `,
 
     data: function() {
         return {
-            musicList: [],
+            tvList: [],
         }
     },
 
     created: function() {
         // this will fire when the component gets built
-        this.fetchAllMusic();
+        this.fetchAllTv();
     },
 
     methods: {
-        fetchAllMusic() {
-            let url = `./admin/index.php?media=music`;
+        fetchAllTv() {
+            let url = `./admin/index.php?getChildTv=true`;
 
             fetch(url)
             .then(res => res.json())
-            .then(data => (this.musicList = data))
+            .then(data => (this.tvList = data))
             .catch((err) => {console.error(err)})
         },
     },
 
     components: {
-        Music: Music,
+        Tv: Tv,
     }
 
 }

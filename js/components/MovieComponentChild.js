@@ -1,44 +1,44 @@
-import Music from "./Music.js";
+import Movie from "./Movie.js";
 
 export default {
-    name: "MusicComponent",
+    name: "MovieComponentChild",
 
     template: `
     <section class="mediaLibrary">
         <div class="selectionHeader">
-            <h1>Music</h1>
-            <p>You can find the best tunes on Flashback by Roku. Browse and listen!</p>
+            <h1>Movies</h1>
+            <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku</p>
         </div>
         <div class="row">
-            <Music v-for="music in musicList" :livemusic="music"></Music>
+            <Movie v-for="movie in movieList" :livemovie="movie"></Movie>
         </div>
     </section>
     `,
 
     data: function() {
         return {
-            musicList: [],
+            movieList: [],
         }
     },
 
     created: function() {
         // this will fire when the component gets built
-        this.fetchAllMusic();
+        this.fetchAllMovies();
     },
 
     methods: {
-        fetchAllMusic() {
-            let url = `./admin/index.php?media=music`;
+        fetchAllMovies() {
+            let url = `./admin/index.php?getChildMovies=true`;
 
             fetch(url)
             .then(res => res.json())
-            .then(data => (this.musicList = data))
+            .then(data => (this.movieList = data))
             .catch((err) => {console.error(err)})
         },
     },
 
     components: {
-        Music: Music,
+        Movie: Movie,
     }
 
 }
