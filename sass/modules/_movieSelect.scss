@@ -3,6 +3,48 @@
     margin-bottom: 100px;
 }
 
+#mediaSelectSection {
+    background-color: $main-lightgrey;
+}
+
+#mediaSelectHeader {
+    background-color: $main-darkgrey;
+    padding: 1%;
+    h4 {
+        color: $main-teal;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+#mediaSelectNav {
+    width: 100%;
+    ul {
+        list-style-type: none;
+
+        li {
+            display: inline-block;
+            padding: 30px;
+            width: 30%;
+            text-align: center;
+            border-left: 2px solid white;
+            cursor: pointer;
+            img {
+                display: inline;
+                width: 20%;
+                margin-right: 30px;
+            }
+            h2 {
+                display: inline;
+            }
+        }
+    }
+    
+    
+}
+
 .accordion {
     background-color: $main-darkgrey;
 }
@@ -56,7 +98,7 @@
     background-color: $main-lightgrey;
 }
 
-#movieInfo {
+.mediaInfo {
     img {
         width: 90%;
     }

@@ -1,4 +1,4 @@
-import UserComponent from "./layout/UserComponent.js";
+import UserComponent from "./UserComponent.js";
 
 export default {
     template: `
@@ -7,12 +7,17 @@ export default {
             <div class="col-12">
                 <h1 class="user-message">{{ message }}</h1>
                 <div class="row" id="userCon">
-                    <user v-for="user in userList" :liveuser="user"></user>
+                    <user v-for="(user, index) in userList" :liveuser="user" :key="index" />
                 </div>
             </div>
         </div>
         </section>
     `,
+
+    created: function() {
+        // this will fire when the component gets built
+        this.fetchAllUsers();
+    },
 
     data() {
         return {
@@ -21,14 +26,10 @@ export default {
         }
     },
 
-    created: function() {
-        // this will fire when the component gets built
-        this.fetchAllUsers();
-    },
-
+    
     methods: {
         fetchAllUsers() {
-            let url = `./includes/index.php?getUsers=true`;
+            let url = './admin/admin_getusers.php?allusers=true';
 
             fetch(url)
             .then(res => res.json())

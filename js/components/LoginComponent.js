@@ -4,7 +4,7 @@ export default {
             <div class="col-12">
                 <h5>Welcome to Flashback by Roku - your all-in-one streaming platform for the decades.</h5>
                 <h1>Login</h1>
-                <form @submit.prevent="login" >
+                <form>
                     <div class="form-group">
                         <label class="sr-only" for="inlineFormInputName">Username</label>
                         <input v-model="input.username" type="text" class="form-control-lg" id="inlineFormInputName" placeholder="username" required>
@@ -15,7 +15,7 @@ export default {
                         <input v-model="input.password" type="password" class="form-control-lg" id="inlineFormPassword" placeholder="password" required>
                     </div>
 
-                    <button type="submit" class="btn btn-outline-primary">Sign In</button>
+                    <button v-on:click.prevent="login()" type="submit" class="btn btn-outline-primary">Sign In</button>
                 </form>            
             </div>
         </div>
@@ -44,7 +44,7 @@ export default {
                 formData.append("password", this.input.password);
 
                 // hit this url and pass those paramaters through
-                let url = "./includes/index.php?user=true";
+                let url = `./admin/admin_login.php`;
 
                 fetch(url, {
                     method: "POST",
@@ -52,24 +52,27 @@ export default {
                 })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    if (typeof data != "object") {
+                        console.warn(data);
+                        alert("authentication failed, please try again"); //change this to something else
+                    } else {
+                        // tell the app that we have a successful login
+                        // and store the user object that we retrieved
 
-                    // tell the app that we have a successful login
-                    // and store the user object that we retrieved
+                        // true below means that authentication worked
+                        // data is the user we retrieved from the DB
+                        this.$emit("authenticated", true, data);
 
-                    // true below means that authentication worked
-                    // data is the user we retrieved from the DB
-                    this.$emit("authenticated", true, data[0]);
-
-                    // push the user to the users page
-                    // this is like a redirect
-                    this.$router.replace({name: "users"});
+                        // push the user to the users page
+                        // this is like a redirect
+                        this.$router.replace({ name: "users" });
+                    }
                 })
-                .catch((err) => console.log(err));
-
-
+                .catch(function (error) {
+                    console.log(error);
+                });
             } else {
-                console.error("inputs can't be blank!");
+                console.error("Please enter a username and password");
             }
         }
     }

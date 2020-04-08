@@ -1,8 +1,9 @@
 // Imports
 import LoginComponent from "./components/LoginComponent.js";
 import UsersComponent from "./components/UsersComponent.js";
-import ContentMenuComponent from "./components/ContentMenuComponent.js";
-import PlayerComponent from "./components/PlayerComponent.js";
+import UserHomeComponent from "./components/UserHomeComponent.js";
+import MediaSelectComponent from "./components/MediaSelectComponent.js";
+import MediaPlayerComponent from "./components/MediaPlayerComponent.js";
 
 (() => {
     
@@ -12,28 +13,17 @@ import PlayerComponent from "./components/PlayerComponent.js";
             { path: '/', redirect: { name: "login" } },
             { path: '/login', name: "login", component: LoginComponent },
             { path: '/users', name: "users", component: UsersComponent },
-            { path: '/home', name: "dashboard", component: ContentMenuComponent },
-            { path: '/player', name: "player", component: PlayerComponent },
+            { path: '/userhome', name: "home", component: UserHomeComponent, props: true },
+            { path: '/mediaselect', name: "media", component: MediaSelectComponent, props: true},
+            { path: '/mediaplayer', name: "mediaplayer", component: MediaPlayerComponent, props: true },
         ]
     });
 
     const vm = new Vue({
-
         data: {
             authenticated: false,
             administrator: false,
-
-            mockAccount: {
-                username: "user",
-                password: "password"
-            },
-
-            movies: [],
             user: [],
-        },
-
-        created: function () {
-            
         },
 
         methods: {
@@ -41,7 +31,7 @@ import PlayerComponent from "./components/PlayerComponent.js";
                 this.authenticated = status;
                 // handle implicit type coercion here (bad, part of JS)
                 // turn our admin 1 or 0 back into a number
-                this.administrator = parseInt(data.isadmin);
+                // this.administrator = parseInt(data.isadmin);
                 this.user = data;
               },
 
@@ -49,40 +39,44 @@ import PlayerComponent from "./components/PlayerComponent.js";
                 // delete local session
         
                 // push user back to login page
-                this.$router.push({ path: "/login" });
+                this.$router.push({ name: "login" });
                 this.authenticated = false;
-                this.administrator = false;
-              },
-
-            getMovieData() {
-                // do a fetch call here and get the user from the DB
-                const url = './includes/index.php?getMovie=1';
-          
-                fetch(url) // get data from the DB
-                .then(res => res.json()) // translate JSON to plain object
-                .then(data => { // use the plain data object (the user)
-                  console.log(data); // log it to the console (testing)
-          
-                  // put our DB data into Vue
-                  this.movies.settings = data[0];
-                })
-                .catch((error) => console.error(error))
-              },
+                
+                if (localStorage.getItem("cachedUser")) {
+                  localStorage.removeItem("cachedUser");
+                }
+        
+                if (localStorage.getItem("cachedVideo")) {
+                  localStorage.removeItem("cachedVideo");
+                }
+              }
         },
+
+        // created: function () {
+        //   if (localStorage.getItem("cachedUser")) {
+        //     let user = JSON.parse(localStorage.getItem("cachedUser"));
+    
+        //     this.authenticated = true;
+    
+        //     this.$router.push({ name: "home", params: { currentUser: user }});
+        //   } else {
+        //     this.$router.push({ name: "login" });
+        //   }
+        // },
 
         router: router
   }).$mount("#app");
 
   // add some router security here
   // beforeEach runs every time we do a navigation event
-//   router.beforeEach((to, from, next) => {
-//     console.log('router guard fired');
+    router.beforeEach((to, from, next) => {
+      // console.log('router guard fired');
 
-//     // if the authenticated property is set to false, then push the user back to the login screen (cuz they're not logged in)
-//     if(vm.authenticated == false) {
-//       next("/login");
-//     } else {
-//       next();
-//     }
-//   })
+      // if the authenticated property is set to false, then push the user back to the login screen (cuz they're not logged in)
+      if(vm.authenticated == false) {
+        next("/login");
+      } else {
+        next();
+      }
+    });
 })();
