@@ -1,40 +1,37 @@
 <?php
 
-    function getMovies($conn) {
-        $getData = 'SELECT * FROM tbl_movies';
-        $runQuery = $conn->query($getData);
-    
-        $result = array();
-        while ($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-            //push each row of data into our array to make it easy to iterate over
-            $result[] = $row;
+    function getMovies() {
+        $pdo = Database::getInstance()->getConnection();
+        $queryMovies = 'SELECT * FROM tbl_movies';
+        $movies = $pdo->query($queryMovies);
+
+        if ($movies) {
+            return $movies->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'There was a problem accessing the movies';
         }
-    
-        return $result;
     }
 
-    function getTv($conn) {
-        $getData = 'SELECT * FROM tbl_tv';
-        $runQuery = $conn->query($getData);
+    function getTv() {
+        $pdo = Database::getInstance()->getConnection();
+        $queryTv = 'SELECT * FROM tbl_tv';
+        $tv = $pdo->query($queryTv);
     
-        $result = array();
-        while ($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-            //push each row of data into our array to make it easy to iterate over
-            $result[] = $row;
+        if ($tv) {
+            return $tv->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'There was a problem accessing the tv shows';
         }
-    
-        return $result;
     }
 
-    function getMusic($conn) {
-        $getData = 'SELECT * FROM tbl_music';
-        $runQuery = $conn->query($getData);
+    function getMusic() {
+        $pdo = Database::getInstance()->getConnection();
+        $queryMusic = 'SELECT * FROM tbl_music';
+        $music = $pdo->query($queryMusic);
     
-        $result = array();
-        while ($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-            //push each row of data into our array to make it easy to iterate over
-            $result[] = $row;
+        if ($music) {
+            return $music->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'There was a problem accessing the music';
         }
-    
-        return $result;
     }

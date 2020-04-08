@@ -2,27 +2,27 @@
     require_once '../load.php';
 
     if(isset($_GET["getMovies"])) {
-        $movies = getMovies($pdo);
+        $movies = getMovies();
     
         echo json_encode($movies);
     }
 
     if(isset($_GET["getTv"])) {
-        $tv = getTv($pdo);
+        $tv = getTv();
     
         echo json_encode($tv);
     }
 
     if(isset($_GET["getMusic"])) {
-        $music = getMusic($pdo);
+        $music = getMusic();
     
         echo json_encode($music);
     }
 
-    if (isset($_GET['user'])) {
-        $user = getUser($pdo);
+    // if (isset($_GET['user'])) {
+    //     $user = getUser($pdo);
 
-        echo json_encode($user);
-    }
+    //     echo json_encode($user);
+    // }
 
     
