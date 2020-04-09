@@ -8,8 +8,15 @@ export default {
         <div class="selectionHeader">
             <h1>Movies</h1>
             <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku</p>
+            <nav class="filterNav">
+                <h3>Filter More:</h3>
+                <ul>
+                    <li><h3>Genre</h3></li>
+                    <li><h3>Decade</h3></li>
+                </ul>
+            </nav>
         </div>
-        <div class="row">
+        <div class="row" id="tvLibrary">
             <Movie v-for="movie in movieList" :livemovie="movie"></Movie>
         </div>
     </section>

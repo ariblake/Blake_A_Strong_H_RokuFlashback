@@ -19,7 +19,7 @@ export default {
                 <p>Ready to flashback?</p>
             </div>
             <div v-if="currentuser.adult === '1'">
-                <nav id="mediaSelectAdultNav">
+                <nav class="mediaSelectNav row">
                     <ul class="media-type">
                         <li v-for="media in mediaTypesAdult" @click="switchMedia(media.component)">
                             <span><img :src="'images/' + media.icon" :alt="media.alt"></span>
@@ -30,7 +30,7 @@ export default {
                 <component :is="this.activeComponent"></component>
             </div>
             <div v-else>
-                <nav id="mediaSelectChildNav">
+                <nav class="mediaSelectNav" id="mediaSelectNavChild">
                     <ul class="media-type">
                         <li v-for="media in mediaTypesChild" @click="switchMedia(media.component)">
                             <span><img :src="'images/' + media.icon" :alt="media.alt"></span>

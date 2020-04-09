@@ -1,5 +1,4 @@
 <?php
-
     function getAll($tbl)
     {
         $pdo = Database::getInstance()->getConnection();
