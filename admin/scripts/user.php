@@ -20,6 +20,7 @@
                 $currentuser['username'] = $user['uname'];
                 $currentuser['avatar'] = $user['avatar'];
                 $currentuser['admin'] = $user['isadmin'];
+                $currentuser['adult'] = $user['isadult'];
                 $currentuser['permissions'] = $user['permissions'];
                 $currentuser['password'] = $user['password'];
                 

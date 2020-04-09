@@ -23,6 +23,7 @@ import MediaPlayerComponent from "./components/MediaPlayerComponent.js";
         data: {
             authenticated: false,
             administrator: false,
+            adult: false,
             user: [],
         },
 
@@ -33,23 +34,28 @@ import MediaPlayerComponent from "./components/MediaPlayerComponent.js";
                 // turn our admin 1 or 0 back into a number
                 // this.administrator = parseInt(data.isadmin);
                 this.user = data;
-              },
+            },
 
-              logout() {
-                // delete local session
+            setAdult(status, data) {
+              this.adult = status;
+              this.user = data;
+            },
+
+            logout() {
+              // delete local session
         
-                // push user back to login page
-                this.$router.push({ name: "login" });
-                this.authenticated = false;
+              // push user back to login page
+              this.$router.push({ name: "login" });
+              this.authenticated = false;
                 
-                if (localStorage.getItem("cachedUser")) {
-                  localStorage.removeItem("cachedUser");
-                }
-        
-                if (localStorage.getItem("cachedVideo")) {
-                  localStorage.removeItem("cachedVideo");
-                }
+              if (localStorage.getItem("cachedUser")) {
+                localStorage.removeItem("cachedUser");
               }
+        
+              if (localStorage.getItem("cachedVideo")) {
+                localStorage.removeItem("cachedVideo");
+              }
+            }
         },
 
         // created: function () {
