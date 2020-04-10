@@ -11,7 +11,8 @@ export default {
             <nav class="filterNav">
                 <h3>Filter More:</h3>
                 <ul>
-                    <li><h3>Genre</h3></li>
+                </ul>
+                <ul>
                     <li><h3>Decade</h3></li>
                 </ul>
             </nav>
@@ -35,7 +36,7 @@ export default {
 
     methods: {
         fetchAllMovies() {
-            let url = `./admin/index.php?getChildMovies=true`;
+            let url = `./admin/index.php?media=movies&adult=0`;
 
             fetch(url)
             .then(res => res.json())

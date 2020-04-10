@@ -35,7 +35,7 @@ export default {
 
     methods: {
         fetchAllTv() {
-            let url = `./admin/index.php?getChildTv=true`;
+            let url = `./admin/index.php?media=tv&adult=0`;
 
             fetch(url)
             .then(res => res.json())

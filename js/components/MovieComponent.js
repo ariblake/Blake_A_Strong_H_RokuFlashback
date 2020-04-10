@@ -28,7 +28,7 @@ export default {
 
     methods: {
         fetchAllMovies() {
-            let url = `./admin/index.php?media=movies`;
+            let url = `./admin/index.php?media=movies&adult=1`;
 
             fetch(url)
             .then(res => res.json())

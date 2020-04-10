@@ -4,6 +4,7 @@ import MusicComponent from "./MusicComponent.js";
 import MovieComponentChild from "./MovieComponentChild.js";
 import TvComponentChild from "./TvComponentChild.js";
 import MusicComponentChild from "./MusicComponentChild.js";
+import DefaultComponent from "./DefaultComponent.js";
 
 export default {
     name: "UserHomeComponent",
@@ -47,7 +48,7 @@ export default {
 
     data: function() {
         return {
-            activeComponent: MovieComponent,
+            activeComponent: DefaultComponent,
 
             mediaTypesAdult: [
                 { name: "Movies", icon: "movies.svg", alt: "movie icon", component: MovieComponent },
