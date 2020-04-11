@@ -1,18 +1,20 @@
-import Movie from "./Movie.js";
+import MovieChild from "./MovieChild.js";
 
 export default {
     name: "MovieComponentChild",
 
     template: `
-    <section class="mediaLibrary">
-        <div class="selectionHeader">
+    <section>
+        <div class="selectionHeader movies">
             <h1>Movies</h1>
             <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku</p>
             <nav class="filterNav">
-                <h3>Filter More:</h3>
-                <a class="btn" role="button" data-toggle="collapse" href="#genreNav" aria-expanded="false" aria-controls="genreNav">Genre</a>
-                <a class="btn" role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav">Decade</a>
-                <div class="collapse" id="genreNav">
+                <div class="row filterOptions">
+                    <h3>Filter More:</h3>
+                    <a role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav"><h3>Decade</h3></a>
+                    <!--<a class="btn" role="button" data-toggle="collapse" href="#genreNav" aria-expanded="false" aria-controls="genreNav">Genre</a>-->
+                </div>
+                <div class="collapse row justify-content-center" id="decadeNav">
                     <ul>
                         <li><a href="50" @click.prevent="filterDecade('5')">50s</a></li>
                         <li><a href="60" @click.prevent="filterDecade('6')">60s</a></li>
@@ -23,7 +25,7 @@ export default {
                     </ul>
                 </div>
                 
-                <div class="collapse" id="decadeNav">
+                <div class="collapse" id="genreNav">
                     <ul>
                         <li><a href="adventure" @click.prevent="filterDecade('adventure')">Adventure</a></li>
                         <li><a href="comedy" @click.prevent="filterDecade('comedy')">Comedy</a></li>
@@ -41,8 +43,8 @@ export default {
                 </div>
             </nav>
         </div>
-        <div class="row" id="tvLibrary">
-            <Movie v-for="movie in movieList" :livemovie="movie"></Movie>
+        <div class="row mediaLibrary">
+            <MovieChild v-for="movie in movieList" :livemovie="movie"></MovieChild>
         </div>
     </section>
     `,
@@ -92,7 +94,7 @@ export default {
     },
 
     components: {
-        Movie: Movie,
+        MovieChild: MovieChild,
     }
 
 }

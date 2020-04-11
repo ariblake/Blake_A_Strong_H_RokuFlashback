@@ -1,0 +1,44 @@
+.mediaPlayer {
+    padding: 2%;
+
+    .playerSection {
+    }
+
+    .reviewSection {
+        background-color: $main-darkgrey;
+        padding: 2%;
+        width: 100%;
+        text-align: center;
+
+        .reviewForm {
+            input {
+                margin-bottom: 5px;
+                width: 80%;
+            }
+        }
+
+        .socialMedia {
+            img {
+                width: 10%;
+                display: inline-block;
+                margin-right: 20px;
+            }
+            h3 {
+                display: inline-block;
+            }
+        }
+
+        .ratings {
+            a {
+                display: inline;
+            }
+            img {
+                width: 10%;
+            }
+            img:nth-child(3){
+                width: 50%;
+            }
+        }
+    }
+
+}

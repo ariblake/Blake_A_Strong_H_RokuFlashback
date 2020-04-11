@@ -2,7 +2,7 @@ export default {
     template: `
         <div class="container-fluid" id="loginSection">
             <div class="col-12">
-                <h5>Welcome to Flashback by Roku - your all-in-one streaming platform for the decades.</h5>
+                <p>Welcome to Flashback by Roku - your all-in-one streaming platform for the decades.</p>
                 <h1>Login</h1>
                 <form>
                     <div class="form-group">

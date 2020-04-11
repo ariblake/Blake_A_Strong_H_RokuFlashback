@@ -1,17 +1,19 @@
 #homeSection {
-
+    h2 {
+        padding: 2%;
+    }
 }
 
 #mediaSelectSection {
     background-color: $main-lightgrey;
-    width: 100%;
 }
 
 #mediaSelectHeader {
     background-color: $main-darkgrey;
-    padding: 1%;
+    padding: 2%;
     h4 {
         color: $main-teal;
+        margin-bottom: 10px;
     }
 
     p {
@@ -20,26 +22,101 @@
 }
 
 .mediaSelectNav {
-    width: 100%;
+    text-align: center;
     ul {
         list-style-type: none;
 
         li {
             display: inline-block;
-            padding: 30px;
+            padding: 20px;
             width: 30%;
             text-align: center;
             cursor: pointer;
             img {
-                display: inline;
-                width: 20%;
-                margin-right: 30px;
-            }
-            h2 {
-                display: inline;
+                width: 50%;
             }
         }
 
+        li:nth-child(1):hover {
+            h2 {
+                border-bottom: solid 4px $main-red;
+            }
+        }
+        li:nth-child(2):hover {
+            h2 {
+                border-bottom: solid 4px $main-teal;
+            }
+        }
+        li:nth-child(3):hover {
+            h2 {
+                border-bottom: solid 4px $main-orange;
+            }
+        }
+    }
+}
+
+#defaultComponent {
+    text-align: center;
+}
+
+.selectionHeader {
+    padding: 2%;
+    background-color: $main-red;
+    h3 {
+        margin: 0px 12px;
+    }
+}
+
+.selectionHeader.tv {
+    background-color: $main-teal;
+}
+
+.selectionHeader.music {
+    background-color: $main-orange;
+}
+
+.filterNav {
+    a {
+        color: white;
+        font-family: $header-font;
+    }
+}
+
+#decadeNav {
+    ul {
+        list-style-type: none;
+        display: inline;
+        li {
+            display:inline;
+            padding: 0px 20px;
+            a {
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+.mediaLibrary {
+    padding: 3%;
+    width: 100%;
+    background-color: $main-lightgrey;
+}
+
+#mediaSelectNavChild {
+    ul {
+        width: 100%;
+        li {
+            width: 33%;
+        }
+        li:nth-child(1){
+            background-color: $main-red;
+        }
+        li:nth-child(2) {
+            background-color: $main-teal;
+        }
+        li:nth-child(3) {
+            background-color: $main-orange;
+        }
         li:hover {
             h2 {
                 border-bottom: solid 4px white;
@@ -48,79 +125,93 @@
     }
 }
 
-#mediaSelectNavChild {
-    ul {
-        li:nth-child(1){
-            background-color: $main-red;
-        }
-        li:nth-child(2) {
-            background-color: $main-teal;
-        }
-        li:nth-child(3) {
-            background-color: $main-navy;
-        }
-    }
-}
-
-#movieLibrary {
-    background-color: $main-red;
-}
-
-// .accordion {
-//     background-color: $main-darkgrey;
-// }
-
-// #accordionHeading {
-//     background-color: $main-darkgrey;
-//     border: none;
-//     padding: 1%;
-//     h4 {
-//         color: $main-teal;
-//     }
-
-//     p {
-//         color: white;
-//     }
-// }
-
-// .card-header {
-//     color: white;
-//     text-align: left;
-//     img {
-//         width: 4%;
-//         float: left;
-//         background-color: white;
-//         border-radius: 35px;
-//         padding: 5px;
-//         margin: 10px 40px 5px 10px;
-        
-//     }
-//     .btn-link {
-//         font-size: 1em;
-//         text-transform: uppercase;
-//         color: white;
-//         margin-left: 0px;
-//     }
-// }
-
-// #headingOne {
-//     background-color: $main-teal;
-// }
-
-// #headingTwo {
-//     background-color: $main-orange;
-// }
-
-// #headingThree {
+// .mediaLibrary {
 //     background-color: $main-red;
 // }
 
-// .card-body {
-//     background-color: $main-lightgrey;
-// }
-
 .mediaInfo {
+    padding: 2%;
+    cursor: pointer;
+    border: solid 2px $main-lightgrey;
+    border-radius: 10px;
     img {
-        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+.mediaInfo:hover {
+    border: solid 2px $main-red;
+}
+
+.tvInfo {
+    .year {
+        color: $main-teal;
+    }
+}
+
+.tvInfo:hover {
+    border: solid 2px $main-teal;
+}
+
+.musicInfo {
+    .year {
+        color: $main-orange;
+    }
+}
+
+.musicInfo:hover {
+    border: solid 2px $main-orange;
+}
+
+.year {
+    color: $main-red;
+}
+
+.runtime {
+    font-size: 1em;
+}
+
+.mediaImage {
+    position: relative;
+}
+.mediaThumb {
+    width: 100%;
+    height: auto;
+}
+.playImg {
+    position: absolute;
+    top: 35%;
+    left: 45%;
+    right: 0;
+    width: 15%;
+}
+
+.mediaInfoChild {}
+
+@media (min-width: 992px) { 
+    .mediaSelectNav {
+        ul {
+            li {
+                display: inline-block;
+                padding: 30px;
+                width: 30%;
+                text-align: center;
+                cursor: pointer;
+                img {
+                    display: inline;
+                    width: 20%;
+                    margin-right: 30px;
+                }
+                h2 {
+                    display: inline;
+                }
+            }
+    
+            li:hover {
+                h2 {
+                    border-bottom: solid 4px white;
+                }
+            }
+        }
     }
 }
