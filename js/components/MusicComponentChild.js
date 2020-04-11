@@ -35,7 +35,7 @@ export default {
 
     methods: {
         fetchAllMusic() {
-            let url = `./admin/index.php?getChildMusic=true`;
+            let url = `./admin/index.php?media=music&adult=0`;
 
             fetch(url)
             .then(res => res.json())

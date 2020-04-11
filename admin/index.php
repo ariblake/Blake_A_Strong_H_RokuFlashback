@@ -3,21 +3,33 @@
 
     if (isset($_GET['media'])) {
         $tbl = "tbl_" . trim($_GET["media"]);
-        $results = getAll($tbl);
+    }
+
+    if (isset($_GET['adult'])) {
+        $adult = intval(trim($_GET["adult"]));
+    }
+
+    if(isset($_GET['decade'])) {
+        $decade = intval(trim($_GET['decade']));
+
+        $results = getMoviesByDecade($tbl, $adult, $decade);
         echo json_encode($results);
-    }
 
-    if(isset($_GET["getChildMovies"])) {
-        $movies = getChildMovies();
-        echo json_encode($movies);
-    }
+    } else if(isset($_GET['genre'])) {
+        $args = array(
+            'tbl2' => 'tbl_genre',
+            'tbl3' => 'tbl_mov_genre',
+            'col' => 'id',
+            'col2' => 'movies_id',
+            'col3' => 'genre_id',
+            'col4' => 'genre_name',
+            'genre' => $_GET['genre'],
+        );
 
-    if(isset($_GET["getChildTv"])) {
-        $tv = getChildTv();
-        echo json_encode($tv);
-    }
+        $results = getMoviesByGenre($tbl, $adult, $args);
+        echo json_encode($results);
 
-    if(isset($_GET["getChildMusic"])) {
-        $music = getChildMusic();
-        echo json_encode($music);
+    } else {
+        $results = getAll($tbl, $adult);
+        echo json_encode($results);
     }
