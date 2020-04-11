@@ -5,10 +5,10 @@ export default {
         <div>
             <div @click="navToMediaPlayer()">
                 <div class="mediaImage col-xs-6">
-                    <img :src="'images/' + livemovie.cover" class="mediaThumb">
-                    <img src="images/play.svg" class="playImg">
+                    <img :src="'images/' + livemovie.cover" class="mediaThumbChild">
+                    <img src="images/play.svg" class="playImgChild">
                 </div>
-                <div class="col-xs-6">
+                <div class="movieTextChild col-xs-6">
                 <h3 id="movieInfoTitle">{{ livemovie.title }}</h3>
                 <h3 class="year">{{ livemovie.year }}</h3>
                 <p>{{ livemovie.description }}</p>
