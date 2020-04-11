@@ -51,7 +51,7 @@ export default {
             activeComponent: DefaultComponent,
 
             mediaTypesAdult: [
-                { name: "Movies", icon: "movies.svg", alt: "movie icon", component: MovieComponent },
+                { name: "Movies", icon: "movies.svg", alt: "movie icon", component: MovieComponent,  },
                 { name: "TV", icon: "tv.svg", alt: "tv icon", component: TvComponent },
                 { name: "Music", icon: "music.svg", alt: "music icon", component: MusicComponent },
             ],
@@ -67,7 +67,7 @@ export default {
     methods: {
         switchMedia(theComponent) {
             this.activeComponent = theComponent;
-        }
+        },
     },
 
     components: {

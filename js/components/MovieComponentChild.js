@@ -41,7 +41,7 @@ export default {
                 </div>
             </nav>
         </div>
-        <div class="row" id="tvLibrary">
+        <div class="row" id="movieLibrary">
             <Movie v-for="movie in movieList" :livemovie="movie"></Movie>
         </div>
     </section>
