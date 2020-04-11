@@ -7,7 +7,7 @@ export default {
     <section>
         <div class="selectionHeader movies">
             <h1>Movies</h1>
-            <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku</p>
+            <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku!</p>
             <nav class="filterNav">
                 <div class="row filterOptions">
                     <h3>Filter More:</h3>

@@ -31,7 +31,7 @@ Clone this repository to your local machine.
 $ git clone https://github.com/ariblake/Blake_A_Strong_H_RokuFlashback.git
 ```
 
-Open the project through your localhost. Username is 'ari' or 'hillary' and the respective passwords are '123' and 'password'.
+Open the project through your localhost. Username is 'ari' and password is '123' for the parent profile. Or the username is 'hillary' and the password is 'password' for the kid profile.
 
 ## Important Information
 If viewing on Mac, under connect.php, make sure to make the private password 'root'.
