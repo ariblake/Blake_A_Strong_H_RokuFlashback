@@ -21,19 +21,22 @@
     <!-- Facebook share button -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0"></script>
-    
-    <main id="app">
 
-        <header id="mainHeader" class="container-fluid">
-            <nav class="navbar row fixed" id="mainNav">
-                <h1 class="navbar-brand" to="/">Flashback</h1>
-                <ul class="navbar-nav ">
-                    <li class="nav-item" v-if="authenticated" v-on:click="switchUser()"><img src="images/user_placeholder.svg"></li>
-                    <li class="nav-item" v-if="administrator"><img src="images/settings.svg"></li>
-                    <li class="nav-item" v-if="authenticated" v-on:click="logout()"><img src="images/log_out.svg"></li>
-                </ul>
-            </nav> 
-        </header>
+    <main id="app">
+        <div class="container-fluid">
+            <div class="row">
+                <header id="mainHeader" class="col-sm-12">
+                    <nav class="navbar fixed" id="mainNav">
+                        <h1 class="navbar-brand" to="/">Flashback <span>by Roku</span></h1>
+                        <ul class="navbar-nav text-right">
+                            <li class="nav-item" v-if="authenticated" v-on:click="switchUser()"><img src="images/user_placeholder.svg"></li>
+                            <li class="nav-item" v-if="administrator"><img src="images/settings.svg"></li>
+                            <li class="nav-item" v-if="authenticated" v-on:click="logout()"><img src="images/log_out.svg"></li>
+                        </ul>
+                    </nav> 
+                </header>
+            </div>
+        </div>
 
         <router-view @authenticated="setAuthenticated"/>
 

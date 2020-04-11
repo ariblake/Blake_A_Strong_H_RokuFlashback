@@ -6,7 +6,7 @@ export default {
         <div class="row">
             <div class="col-12">
                 <h1 class="user-message">{{ message }}</h1>
-                <div class="row" id="userCon">
+                <div class="row justify-content-center" id="userCon">
                     <user v-for="(user, index) in userList" :liveuser="user" :key="index" />
                 </div>
             </div>

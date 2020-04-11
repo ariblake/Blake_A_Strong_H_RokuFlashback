@@ -2,7 +2,7 @@ export default {
     props: ['liveuser'],
 
     template: `
-        <div class="col-sm-3 mx-auto">
+        <div class="col-sm-3">
             <div @click="navToUserHome()">
                 <img :src="'images/user/' + liveuser.avatar">
                 <h3>{{ liveuser.username }}</h3>

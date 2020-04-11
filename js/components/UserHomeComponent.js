@@ -12,15 +12,15 @@ export default {
     props: ['currentuser'],
 
     template: `
-    <section class="container-fluid" id="homeSection">
-        <h1>Hello {{ currentuser.username }}! Choose a category</h1>
+    <section id="homeSection">
+        <h2>Hi {{ currentuser.username }}! Choose a media category</h2>
         <div id="mediaSelectSection">
             <div id="mediaSelectHeader">
                 <h4>Your all-in-one streaming platform for the decades.</h4>
                 <p>Ready to flashback?</p>
             </div>
             <div v-if="currentuser.adult === '1'">
-                <nav class="mediaSelectNav row">
+                <nav class="mediaSelectNav row justify-content-center">
                     <ul class="media-type">
                         <li v-for="media in mediaTypesAdult" @click="switchMedia(media.component)">
                             <span><img :src="'images/' + media.icon" :alt="media.alt"></span>
@@ -28,7 +28,7 @@ export default {
                         </li>
                     </ul>
                 </nav>
-                <component :is="this.activeComponent"></component>
+                <component class="mediaLibrary" :is="this.activeComponent"></component>
             </div>
             <div v-else>
                 <nav class="mediaSelectNav" id="mediaSelectNavChild">

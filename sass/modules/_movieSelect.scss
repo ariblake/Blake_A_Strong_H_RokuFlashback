@@ -1,5 +1,7 @@
 #homeSection {
-
+    h2 {
+        padding: 2%;
+    }
 }
 
 #mediaSelectSection {
@@ -9,9 +11,10 @@
 
 #mediaSelectHeader {
     background-color: $main-darkgrey;
-    padding: 1%;
+    padding: 2%;
     h4 {
         color: $main-teal;
+        margin-bottom: 10px;
     }
 
     p {
@@ -20,32 +23,64 @@
 }
 
 .mediaSelectNav {
-    width: 100%;
+    text-align: center;
     ul {
         list-style-type: none;
 
         li {
             display: inline-block;
-            padding: 30px;
+            padding: 20px;
             width: 30%;
             text-align: center;
             cursor: pointer;
             img {
-                display: inline;
-                width: 20%;
-                margin-right: 30px;
+                width: 50%;
             }
             h2 {
-                display: inline;
             }
         }
 
-        li:hover {
+        li:nth-child(1):hover {
             h2 {
-                border-bottom: solid 4px white;
+                border-bottom: solid 4px $main-red;
+            }
+        }
+        li:nth-child(2):hover {
+            h2 {
+                border-bottom: solid 4px $main-teal;
+            }
+        }
+        li:nth-child(3):hover {
+            h2 {
+                border-bottom: solid 4px $main-navy;
             }
         }
     }
+}
+
+.filterNav {
+    a {
+        color: white;
+        font-family: $header-font;
+       // text-transform: uppercase;
+        display: inline;
+        font-size: 2.4em;
+    }
+}
+
+#decadeNav {
+    background-color: red;;
+    ul {
+        list-style-type: none;
+        display: inline;
+        li {
+            display:inline;
+        }
+    }
+}
+
+.movieLibrary {
+    padding: 2%;
 }
 
 #mediaSelectNavChild {
@@ -66,61 +101,36 @@
     background-color: $main-red;
 }
 
-// .accordion {
-//     background-color: $main-darkgrey;
-// }
-
-// #accordionHeading {
-//     background-color: $main-darkgrey;
-//     border: none;
-//     padding: 1%;
-//     h4 {
-//         color: $main-teal;
-//     }
-
-//     p {
-//         color: white;
-//     }
-// }
-
-// .card-header {
-//     color: white;
-//     text-align: left;
-//     img {
-//         width: 4%;
-//         float: left;
-//         background-color: white;
-//         border-radius: 35px;
-//         padding: 5px;
-//         margin: 10px 40px 5px 10px;
-        
-//     }
-//     .btn-link {
-//         font-size: 1em;
-//         text-transform: uppercase;
-//         color: white;
-//         margin-left: 0px;
-//     }
-// }
-
-// #headingOne {
-//     background-color: $main-teal;
-// }
-
-// #headingTwo {
-//     background-color: $main-orange;
-// }
-
-// #headingThree {
-//     background-color: $main-red;
-// }
-
-// .card-body {
-//     background-color: $main-lightgrey;
-// }
-
 .mediaInfo {
     img {
         width: 90%;
+    }
+}
+
+@media (min-width: 992px) { 
+    .mediaSelectNav {
+        ul {
+            li {
+                display: inline-block;
+                padding: 30px;
+                width: 30%;
+                text-align: center;
+                cursor: pointer;
+                img {
+                    display: inline;
+                    width: 20%;
+                    margin-right: 30px;
+                }
+                h2 {
+                    display: inline;
+                }
+            }
+    
+            li:hover {
+                h2 {
+                    border-bottom: solid 4px white;
+                }
+            }
+        }
     }
 }
