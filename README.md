@@ -33,6 +33,11 @@ $ git clone https://github.com/ariblake/Blake_A_Strong_H_RokuFlashback.git
 
 Open the project through your localhost. Username is 'ari' or 'hillary' and the respective passwords are '123' and 'password'.
 
+## Important Information
+If viewing on Mac, under connect.php, make sure to make the private password 'root'.
+
+If viewing on Windows, under connect.php, make sure to have the private password section blank.
+
 ## License
 This project is licensed under the terms of the MIT license.
 
