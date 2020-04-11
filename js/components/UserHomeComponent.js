@@ -12,7 +12,7 @@ export default {
     props: ['currentuser'],
 
     template: `
-    <section id="homeSection">
+    <section class="container-fluid" id="homeSection">
         <h2>Hi {{ currentuser.username }}! Choose a media category</h2>
         <div id="mediaSelectSection">
             <div id="mediaSelectHeader">
@@ -28,12 +28,13 @@ export default {
                         </li>
                     </ul>
                 </nav>
-                <component class="mediaLibrary" :is="this.activeComponent"></component>
+                <component :is="this.activeComponent"></component>
             </div>
+
             <div v-else>
-                <nav class="mediaSelectNav" id="mediaSelectNavChild">
+                <nav class="mediaSelectNav justify-content-center" id="mediaSelectNavChild">
                     <ul class="media-type">
-                        <li v-for="media in mediaTypesChild" @click="switchMedia(media.component)">
+                        <li  class="row" v-for="media in mediaTypesChild" @click="switchMedia(media.component)">
                             <span><img :src="'images/' + media.icon" :alt="media.alt"></span>
                             <span><h2>{{ media.name }}</h2></span>
                         </li>

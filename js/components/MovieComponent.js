@@ -13,10 +13,10 @@ export default {
             <nav class="filterNav">
                 <div class="row filterOptions">
                     <h3>Filter More:</h3>
-                    <a class="btn" role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav">Decade</a>
+                    <a class="decadeNav" role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav"><h3>Decade</h3></a>
                     <!--<a class="btn" role="button" data-toggle="collapse" href="#genreNav" aria-expanded="false" aria-controls="genreNav">Genre</a>-->
                 </div>
-                <div class="collapse row" id="decadeNav">
+                <div class="collapse row justify-content-center" id="decadeNav">
                     <ul>
                         <li><a href="50" @click.prevent="filterDecade('5')">50s</a></li>
                         <li><a href="60" @click.prevent="filterDecade('6')">60s</a></li>
@@ -45,7 +45,7 @@ export default {
                 </div>
             </nav>
         </div>
-        <div class="row movieLibrary">
+        <div class="row mediaLibrary">
             <Movie v-for="movie in movieList" :livemovie="movie" :currentuser="currentuser"></Movie>
             
         </div>

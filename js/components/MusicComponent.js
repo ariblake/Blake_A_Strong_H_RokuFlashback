@@ -4,16 +4,16 @@ export default {
     name: "MusicComponent",
 
     template: `
-    <section class="mediaLibrary">
-        <div class="selectionHeader">
+    <section>
+        <div class="selectionHeader music">
             <h1>Music</h1>
             <p>You can find the best tunes on Flashback by Roku. Browse and listen!</p>
             <nav class="filterNav">
                 <div class="row filterOptions">
                     <h3>Filter More:</h3>
-                    <a class="btn" role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav">Decade</a>
+                    <a role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav"><h3>Decade</h3></a>
                 </div>
-                <div class="collapse row" id="decadeNav">
+                <div class="collapse row justify-content-center" id="decadeNav">
                     <ul>
                         <li><a href="50" @click.prevent="filterDecade('5')">50s</a></li>
                         <li><a href="60" @click.prevent="filterDecade('6')">60s</a></li>
@@ -25,7 +25,7 @@ export default {
                 </div>
             </nav>
         </div>
-        <div class="row">
+        <div class="row mediaLibrary">
             <Music v-for="music in musicList" :livemusic="music"></Music>
         </div>
     </section>
