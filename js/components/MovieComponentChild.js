@@ -10,9 +10,9 @@ export default {
             <p>Sit back and relax. Enjoy one of the many movies available on Flashback by Roku</p>
             <nav class="filterNav">
                 <h3>Filter More:</h3>
-                <a class="btn" role="button" data-toggle="collapse" href="#genreNav" aria-expanded="false" aria-controls="genreNav">Genre</a>
                 <a class="btn" role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav">Decade</a>
-                <div class="collapse" id="genreNav">
+                <!--<a class="btn" role="button" data-toggle="collapse" href="#genreNav" aria-expanded="false" aria-controls="genreNav">Genre</a>-->
+                <div class="collapse" id="decadeNav">
                     <ul>
                         <li><a href="50" @click.prevent="filterDecade('5')">50s</a></li>
                         <li><a href="60" @click.prevent="filterDecade('6')">60s</a></li>
@@ -23,7 +23,7 @@ export default {
                     </ul>
                 </div>
                 
-                <div class="collapse" id="decadeNav">
+                <div class="collapse" id="genreNav">
                     <ul>
                         <li><a href="adventure" @click.prevent="filterDecade('adventure')">Adventure</a></li>
                         <li><a href="comedy" @click.prevent="filterDecade('comedy')">Comedy</a></li>

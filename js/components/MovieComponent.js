@@ -1,6 +1,8 @@
 import Movie from "./Movie.js";
 
 export default {
+    props: ['currentuser'],
+
     name: "MovieComponent",
 
     template: `
@@ -12,7 +14,7 @@ export default {
                 <div class="row filterOptions">
                     <h3>Filter More:</h3>
                     <a class="btn" role="button" data-toggle="collapse" href="#decadeNav" aria-expanded="false" aria-controls="decadeNav">Decade</a>
-                    <a class="btn" role="button" data-toggle="collapse" href="#genreNav" aria-expanded="false" aria-controls="genreNav">Genre</a>
+                    <!--<a class="btn" role="button" data-toggle="collapse" href="#genreNav" aria-expanded="false" aria-controls="genreNav">Genre</a>-->
                 </div>
                 <div class="collapse row" id="decadeNav">
                     <ul>
@@ -44,7 +46,8 @@ export default {
             </nav>
         </div>
         <div class="row movieLibrary">
-            <Movie v-for="movie in movieList" :livemovie="movie"></Movie>
+            <Movie v-for="movie in movieList" :livemovie="movie" :currentuser="currentuser"></Movie>
+            
         </div>
     </section>
     `,

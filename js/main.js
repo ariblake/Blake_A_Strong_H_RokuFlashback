@@ -3,6 +3,7 @@ import LoginComponent from "./components/LoginComponent.js";
 import UsersComponent from "./components/UsersComponent.js";
 import UserHomeComponent from "./components/UserHomeComponent.js";
 import MediaPlayerComponent from "./components/MediaPlayerComponent.js";
+import AudioPlayerComponent from "./components/AudioPlayerComponent.js";
 
 (() => {
     
@@ -14,6 +15,7 @@ import MediaPlayerComponent from "./components/MediaPlayerComponent.js";
             { path: '/users', name: "users", component: UsersComponent },
             { path: '/userhome', name: "home", component: UserHomeComponent, props: true },
             { path: '/mediaplayer', name: "mediaplayer", component: MediaPlayerComponent, props: true },
+            { path: '/audioplayer', name: "audioplayer", component: AudioPlayerComponent, props: true },
         ]
     });
 

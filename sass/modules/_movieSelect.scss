@@ -94,6 +94,11 @@
         li:nth-child(3) {
             background-color: $main-navy;
         }
+        li:hover {
+            h2 {
+                border-bottom: solid 4px $main-white;
+            }
+        }
     }
 }
 
@@ -102,6 +107,7 @@
 }
 
 .mediaInfo {
+    cursor: pointer;
     img {
         width: 90%;
     }

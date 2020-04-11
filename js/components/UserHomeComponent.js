@@ -22,7 +22,7 @@ export default {
             <div v-if="currentuser.adult === '1'">
                 <nav class="mediaSelectNav row justify-content-center">
                     <ul class="media-type">
-                        <li v-for="media in mediaTypesAdult" @click="switchMedia(media.component)">
+                        <li v-for="media in mediaTypesAdult" :currentuser="currentuser" @click="switchMedia(media.component)">
                             <span><img :src="'images/' + media.icon" :alt="media.alt"></span>
                             <span><h2>{{ media.name }}</h2></span>
                         </li>

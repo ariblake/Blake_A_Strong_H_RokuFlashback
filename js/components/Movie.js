@@ -2,7 +2,7 @@ export default {
     props: ['livemovie'],
 
     template: `
-        <div class="col-xs-6 col-lg-4 mediaInfo">
+        <div  class="col-xs-6 col-lg-4 mediaInfo">
             <div @click="navToMediaPlayer()">
                 <img :src="'images/' + livemovie.cover">
                 <h2 id="movieInfoTitle">{{ livemovie.title }}</h2>
@@ -21,7 +21,7 @@ export default {
             // localStorage.setItem("cachedUser", JSON.stringify(this.liveuser));
     
             // send this user to its home page, and pass the user object to the home page
-            this.$router.push({ name: "mediaplayer", params: { currentuser: this.liveuser, media: this.livemovie}})
+            this.$router.push({ name: "mediaplayer", params: { currentuser: this.currentuser, media: this.livemovie}})
         }
     }
 }
