@@ -1,0 +1,21 @@
+.mediaPlayer {
+    padding: 2%;
+
+    .playerSection {
+    }
+
+    .reviewSection {
+        background-color: $main-darkgrey;
+        padding: 2%;
+        width: 100%;
+        text-align: center;
+
+        .reviewForm {
+            input {
+                margin-bottom: 5px;
+                width: 80%;
+            }
+        }
+    }
+
+}
