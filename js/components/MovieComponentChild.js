@@ -43,7 +43,7 @@ export default {
                 </div>
             </nav>
         </div>
-        <div class="row mediaLibrary">
+        <div class="row mediaLibraryChildMovie">
             <MovieChild v-for="movie in movieList" :livemovie="movie"></MovieChild>
         </div>
     </section>
