@@ -15,25 +15,31 @@ export default {
             <div class="row reviewSection justify-content-center">
                 <div class="socialMedia col-xs-12 col-lg-6">
                     <h2>Share</h2>
-                    <div class="fb-share-button btn row" data-href="http://localhost/Blake_A_Strong_H_RokuFlashback/#/mediaplayer" data-layout="button" data-size="large">
-                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%2FBlake_A_Strong_H_RokuFlashback%2F%23%2Fmediaplayer&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
-                            <img src="images/facebook.svg" alt="share on Facebook">
+                    <div class="fb-share-button btn row">
+                        <a target="_blank" href="https://www.facebook.com/">
+                            <img src="images/facebook.svg" alt="Share on Facebook">
                             <h3>Facebook</h3>
                         </a>
                     </div>
+                    <div class="instagram-share-button btn row">
+                        <a href="https://www.instagram.com/?hl=en" target="_blank">
+                            <img src="images/instagram.svg" alt="Share on Instagram">
+                            <h3>Instagram</h3>
+                        </a>
+                    </div>
                     <div class="twitter-share-button btn row">
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" target="_blank" data-size="large" data-url="http://localhost/Blake_A_Strong_H_RokuFlashback/#/mediaplayer" data-show-count="false">
-                            <img src="images/twitter.svg" alt="share on Twitter">
+                        <a href="https://twitter.com/home?lang=en" target="_blank">
+                            <img src="images/twitter.svg" alt="Share on Twitter">
                             <h3>Twitter</h3>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-xs-12 col-lg-6 ratings">
+                <div class="col-xs-12 col-lg-2 ratings">
                     <h2>Other</h2>
-                    <a class="btn btn-primary"><img src="images/heart.svg"><h3>Love</h3></a>
-                    <a class="btn btn-primary"><img src="images/like.svg"><h3>Like</h3></a>
-                    <a class="btn btn-primary"><img src="images/dislike.svg"><h3>Dislike</h3></a>
+                    <a class="btn btn-primary"><img src="images/heart.svg" style="height: 20px;"><h3>Love</h3></a>
+                    <a class="btn btn-primary"><img src="images/like.svg" style="height: 20px;"><h3>Like</h3></a>
+                    <a class="btn btn-primary"><img src="images/dislike.svg" style="height: 20px;"><h3>Dislike</h3></a>
                 </div>
 
             </div>
