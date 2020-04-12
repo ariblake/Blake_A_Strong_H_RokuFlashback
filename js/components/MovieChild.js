@@ -2,17 +2,17 @@ export default {
     props: ['livemovie'],
 
     template: `
-        <div>
+        <div class="col-xs-6 col-lg-6 mediaInfoChild">
             <div @click="navToMediaPlayer()">
-                <div class="mediaImage col-xs-6">
-                    <img :src="'images/' + livemovie.cover" class="mediaThumbChild">
-                    <img src="images/play.svg" class="playImgChild">
+                <div class="mediaImage">
+                    <img :src="'images/' + livemovie.cover" class="mediaThumb">
+                    <img src="images/play.svg" class="playImg">
                 </div>
-                <div class="movieTextChild col-xs-6">
-                <h3 id="movieInfoTitle">{{ livemovie.title }}</h3>
-                <h3 class="year">{{ livemovie.year }}</h3>
-                <p>{{ livemovie.description }}</p>
-                <p class="runtime">{{ livemovie.runtime }}</p>
+                <div class="movieInfoTitle">
+                    <h3 id="movieInfoTitle">{{ livemovie.title }}</h3>
+                    <h3 class="yearChild">{{ livemovie.year }}</h3>
+                    <p>{{ livemovie.description }}</p>
+                    <p class="runtime">{{ livemovie.runtime }}</p>
                 </div>
             </div>
         </div>

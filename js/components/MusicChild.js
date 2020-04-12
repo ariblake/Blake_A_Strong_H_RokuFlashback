@@ -2,7 +2,7 @@ export default {
     props: ['livemusic'],
 
     template: `
-        <div class="col-xs-12 mediaInfo musicInfo">
+        <div class="col-xs-12 col-lg-6 mediaInfo musicInfo">
             <div @click="navToAudioPlayer()">
                 <div class="mediaImage">
                     <img :src="'images/' + livemusic.cover" class="mediaThumb">
